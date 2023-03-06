@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Allttaemerona" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Allttaemerona" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryVariant">@color/green</item>
@@ -24,5 +24,9 @@
     <style name="Theme.Allttaemerona.Splash">
         <item name="android:statusBarColor">@color/main_purple</item>
         <item name="android:windowBackground">@color/main_purple</item>
+    </style>
+    <style name="Theme.Allttaemerona.Sign">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
     </style>
 </resources>
