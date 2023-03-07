@@ -29,4 +29,8 @@
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowBackground">@color/white</item>
     </style>
+    <style name="Theme.Allttaemerona.Underline">
+        <item name="colorAccent">@color/gray</item>
+        <item name="colorControlNormal">@color/black</item>
+    </style>
 </resources>

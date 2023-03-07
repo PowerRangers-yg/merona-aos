@@ -38,14 +38,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/et_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintWidth_percent="0.958"
             android:ems="10"
             android:inputType="textPersonName"
-            android:textSize="20sp"
-            android:padding="0dp"
+            android:textSize="20dp"
+            android:theme="@style/Theme.Allttaemerona.Underline"
+            app:layout_constraintTop_toTopOf="@id/tv_id"
             app:layout_constraintBottom_toBottomOf="@+id/tv_id"
             app:layout_constraintStart_toEndOf="@+id/tv_id" />
 
@@ -72,14 +73,15 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/et_pw"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
             app:layout_constraintWidth_percent="0.95"
-            android:textSize="20sp"
-            android:padding="0dp"
+            android:textSize="20dp"
+            android:theme="@style/Theme.Allttaemerona.Underline"
+            app:layout_constraintTop_toTopOf="@id/tv_pw"
             app:layout_constraintBottom_toBottomOf="@+id/tv_pw"
             app:layout_constraintStart_toEndOf="@+id/tv_pw" />
     </androidx.constraintlayout.widget.ConstraintLayout>
