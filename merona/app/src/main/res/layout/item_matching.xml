@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp">
+
+    <TextView
+        android:id="@+id/tv_delivery_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#분이내 도착 가능"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_messenger_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---"
+        app:layout_constraintStart_toStartOf="@id/tv_delivery_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_delivery_time"/>
+
+    <TextView
+        android:id="@+id/tv_delivery_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#km"
+        app:layout_constraintStart_toStartOf="@id/tv_messenger_nickname"
+        app:layout_constraintTop_toBottomOf="@id/tv_messenger_nickname"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_delivery_distance"
+        android:background="@color/gray"/>
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:text="매칭"
+        android:textSize="15dp"
+        android:background="@drawable/green_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_delivery_distance"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
