@@ -33,4 +33,8 @@
         <item name="colorAccent">@color/gray</item>
         <item name="colorControlNormal">@color/black</item>
     </style>
+
+    <style name="FloatingBtn" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
 </resources>
