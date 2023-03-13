@@ -1,11 +1,10 @@
 package com.example.allttaemerona.src.main.purchaser
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.allttaemerona.R
 import com.example.allttaemerona.config.BaseActivity
 import com.example.allttaemerona.databinding.ActivityPurchaserMainBinding
-import com.example.allttaemerona.src.main.purchaser.chat.PurchaserChatListFragment
+import com.example.allttaemerona.src.main.chat.ChatListFragment
 import com.example.allttaemerona.src.main.purchaser.list.RequestListFragment
 
 class PurchaserMainActivity : BaseActivity<ActivityPurchaserMainBinding>(ActivityPurchaserMainBinding::inflate) {
@@ -29,7 +28,7 @@ class PurchaserMainActivity : BaseActivity<ActivityPurchaserMainBinding>(Activit
                     R.id.menu_purchaser_chat -> {
                         supportFragmentManager
                             .beginTransaction()
-                            .replace(binding.purchaserFrm.id, PurchaserChatListFragment())
+                            .replace(binding.purchaserFrm.id, ChatListFragment())
                             .commitAllowingStateLoss()
                     }
                 }
