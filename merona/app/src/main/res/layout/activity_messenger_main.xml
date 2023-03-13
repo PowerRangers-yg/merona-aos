@@ -6,4 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".src.main.messenger.MessengerMainActivity">
 
+    <FrameLayout
+        android:id="@+id/messenger_frm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nav_bottom_mes"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_bottom_mes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_messenger_bottom_nav"
+        android:background="@color/white" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
