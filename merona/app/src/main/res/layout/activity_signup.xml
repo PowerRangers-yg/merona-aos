@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintWidth_percent="0.7"
         android:ems="10"
+        android:privateImeOptions="defaultInputmode=english"
         android:inputType="textPersonName"
         android:theme="@style/Theme.Allttaemerona.Underline"
         app:layout_constraintStart_toStartOf="parent"
