@@ -21,4 +21,7 @@
     <string name="select">선택해주세요</string>
     <string name="purchaser">구매자</string>
     <string name="messenger">전달자</string>
+    <string name="id_hint">이메일을 입력해주세요</string>
+    <string name="pw_create_hint">영문, 숫자를 포함한 8~15자의 비밀번호</string>
+    <string name="pw_hint">비밀번호를 입력해주세요</string>
 </resources>
