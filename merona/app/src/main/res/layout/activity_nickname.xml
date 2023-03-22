@@ -16,12 +16,27 @@
         app:layout_constraintBottom_toTopOf="@+id/et_nickname"
         app:layout_constraintStart_toStartOf="@+id/et_nickname" />
 
+    <Button
+        android:id="@+id/btn_nickname_check"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:background="@drawable/green_light_radius"
+        app:layout_constraintStart_toEndOf="@id/tv_nickname"
+        app:layout_constraintTop_toTopOf="@id/tv_nickname"
+        app:layout_constraintBottom_toBottomOf="@id/tv_nickname"
+        android:layout_marginStart="10dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:text="중복확인"/>
+
     <EditText
         android:id="@+id/et_nickname"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         app:layout_constraintWidth_percent="0.7"
         android:ems="10"
+        android:hint="2글자 이상의 닉네임을 입력해주세요"
+        android:maxLength="20"
+        android:textSize="15sp"
         android:inputType="textPersonName"
         android:theme="@style/Theme.Allttaemerona.Underline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,6 +47,8 @@
         android:id="@+id/tv_nickname_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="@+id/et_nickname"
         app:layout_constraintTop_toBottomOf="@+id/et_nickname" />
 
