@@ -26,6 +26,19 @@
         app:layout_constraintStart_toStartOf="@id/et_id_signup"
         app:layout_constraintBottom_toTopOf="@id/et_id_signup"/>
 
+    <Button
+        android:id="@+id/btn_id_check"
+        android:layout_width="60dp"
+        android:layout_height="17dp"
+        app:layout_constraintStart_toEndOf="@id/tv_id_signup"
+        app:layout_constraintTop_toTopOf="@id/tv_id_signup"
+        app:layout_constraintBottom_toBottomOf="@id/tv_id_signup"
+        android:background="@drawable/green_light_radius"
+        android:layout_marginStart="9dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:text="중복확인"
+        android:textSize="13sp"/>
+
     <EditText
         android:id="@+id/et_id_signup"
         android:layout_width="0dp"
@@ -33,7 +46,9 @@
         app:layout_constraintWidth_percent="0.7"
         android:ems="10"
         android:privateImeOptions="defaultInputmode=english"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
+        android:hint="@string/id_hint"
+        android:textSize="15sp"
         android:theme="@style/Theme.Allttaemerona.Underline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +58,8 @@
         android:id="@+id/tv_id_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="9sp"
+        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="@+id/et_id_signup"
         app:layout_constraintTop_toBottomOf="@+id/et_id_signup" />
 
@@ -52,6 +69,7 @@
         android:layout_height="wrap_content"
         android:text="@string/pw"
         android:textSize="14dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@id/tv_id_error"
         app:layout_constraintTop_toBottomOf="@id/tv_id_error"/>
 
@@ -61,8 +79,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintWidth_percent="0.7"
         android:ems="10"
+        android:textSize="15sp"
         android:theme="@style/Theme.Allttaemerona.Underline"
         android:inputType="textPassword"
+        android:hint="@string/pw_create_hint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_pw_signup" />
@@ -71,6 +91,8 @@
         android:id="@+id/tv_pw_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="9sp"
+        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="@+id/et_pw_signup"
         app:layout_constraintTop_toBottomOf="@+id/et_pw_signup" />
 
@@ -80,6 +102,7 @@
         android:layout_height="wrap_content"
         android:text="@string/pw_check"
         android:textSize="14dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintTop_toBottomOf="@id/tv_pw_error"
         app:layout_constraintStart_toStartOf="@id/tv_pw_error"/>
 
@@ -89,6 +112,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintWidth_percent="0.7"
         android:ems="10"
+        android:textSize="15sp"
         android:inputType="textPassword"
         android:theme="@style/Theme.Allttaemerona.Underline"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,6 +123,8 @@
         android:id="@+id/tv_pw_check_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="9sp"
+        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="@+id/et_pw_check"
         app:layout_constraintTop_toBottomOf="@+id/et_pw_check" />
 
