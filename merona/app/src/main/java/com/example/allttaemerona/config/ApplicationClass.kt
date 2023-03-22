@@ -2,6 +2,8 @@ package com.example.allttaemerona.config
 
 import android.app.Application
 import android.content.SharedPreferences
+import com.example.allttaemerona.R
+import com.kakao.sdk.common.KakaoSdk
 import retrofit2.Retrofit
 
 class ApplicationClass: Application() {
@@ -15,6 +17,7 @@ class ApplicationClass: Application() {
 
     override fun onCreate() {
         super.onCreate()
+        KakaoSdk.init(this, getString(R.string.kakao_native_app_key))
         sSharedPreferences =
             applicationContext.getSharedPreferences("MERONA_APP", MODE_PRIVATE)
     }
