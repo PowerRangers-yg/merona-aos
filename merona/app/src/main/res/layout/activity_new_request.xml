@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:title="배달 요청 작성"
-        app:showBackButton="true"/>
+        app:showBackButton="true"
+        app:showButtons="false"/>
 
     <ScrollView
         android:layout_width="match_parent"
