@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ContentInfoCompat.Flags
 import com.example.allttaemerona.R
+import com.example.allttaemerona.src.main.purchaser.list.RequestListFragment
 
 class CustomToolbar(context: Context, attrs:AttributeSet) : ConstraintLayout(context,attrs) {
 
@@ -53,10 +54,10 @@ class CustomToolbar(context: Context, attrs:AttributeSet) : ConstraintLayout(con
         }
     }
 
-    fun setOnBackListner(listner: OnBackListener){
+    fun setOnBackListener(listener: OnBackListener){
         val backButton = findViewById<ImageButton>(R.id.ib_back)
         backButton.setOnClickListener {
-            listner.onClick(it)
+            listener.onClick(it)
         }
     }
 
@@ -67,7 +68,62 @@ class CustomToolbar(context: Context, attrs:AttributeSet) : ConstraintLayout(con
         }
     }
 
+    fun setOnSwitchListener(listener: OnSwitchListener){
+        val switchButton = findViewById<ImageButton>(R.id.ib_switch)
+        switchButton.setOnClickListener {
+            listener.onClick(it)
+        }
+    }
+
+    fun setOnSwitchListener(action: (view: View) -> Unit){
+        val switchButton = findViewById<ImageButton>(R.id.ib_switch)
+        switchButton.setOnClickListener {
+            action(it)
+        }
+    }
+
+    fun setOnNotiListener(listener: OnNotiListener){
+        val switchButton = findViewById<ImageButton>(R.id.ib_notification)
+        switchButton.setOnClickListener {
+            listener.onClick(it)
+        }
+    }
+
+    fun setOnNotiListener(action: (view: View) -> Unit){
+        val switchButton = findViewById<ImageButton>(R.id.ib_notification)
+        switchButton.setOnClickListener {
+            action(it)
+        }
+    }
+
+    fun setOnSettingListener(listener: OnSettingListener){
+        val switchButton = findViewById<ImageButton>(R.id.ib_setting)
+        switchButton.setOnClickListener {
+            listener.onClick(it)
+        }
+    }
+
+    fun setOnSettingListener(action: (view: View) -> Unit){
+        val switchButton = findViewById<ImageButton>(R.id.ib_setting)
+        switchButton.setOnClickListener {
+            action(it)
+        }
+    }
+
     interface OnBackListener {
         fun onClick(view: View)
     }
+
+    interface OnSwitchListener {
+        fun onClick(view: View)
+    }
+
+    interface OnNotiListener {
+        fun onClick(view: View)
+    }
+
+    interface OnSettingListener {
+        fun onClick(view: View)
+    }
+
 }
