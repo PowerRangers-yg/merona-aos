@@ -13,6 +13,35 @@ class NewRequestActivity: BaseActivity<ActivityNewRequestBinding>(ActivityNewReq
         //toolbar 뒤로가기 버튼
         val toolbar = binding.toolbar
         toolbar.setOnBackListener(OnBackListener())
+
+        val editTime = binding.tvTimeSetting
+        val editPay = binding.tvPaySetting
+
+        editTime.setOnClickListener {
+            var initNum = 0
+            if (editTime.text != null ){
+                initNum = editTime.text.toString().toInt()
+            }
+            val dialog = NumberPickerDialog("시간", initNum, 100, 0, 5)
+            dialog.setOnOkClickedListener { content ->
+                editTime.text = content.toString()
+            }
+            dialog.isCancelable = false
+            dialog.show(supportFragmentManager, "time" )
+        }
+
+        editPay.setOnClickListener{
+            var initNum = 0
+            if (editPay.text != null ){
+                initNum = editPay.text.toString().toInt()
+            }
+            val dialog = NumberPickerDialog("배송료", initNum, 10000, 0, 500)
+            dialog.setOnOkClickedListener { content ->
+                editPay.text = content.toString()
+            }
+            dialog.isCancelable = false
+            dialog.show(supportFragmentManager, "pay" )
+        }
     }
 
     //toolbar 뒤로가기 버튼
