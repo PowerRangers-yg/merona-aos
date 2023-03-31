@@ -42,10 +42,11 @@
 
             <TextView
                 android:id="@+id/tv_search"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="TextView"
                 android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toStartOf="@id/ib_location"
                 app:layout_constraintStart_toStartOf="@id/tv_location"
                 app:layout_constraintTop_toBottomOf="@id/tv_location" />
 
@@ -62,6 +63,7 @@
                 android:id="@+id/ib_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
                 android:background="@android:color/transparent"
                 app:srcCompat="@drawable/ic_baseline_my_location_24"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,20 +74,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="시간"
+                android:paddingBottom="10dp"
                 android:textSize="16sp"
                 android:layout_marginTop="25dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/view_underline"/>
 
-            <EditText
-                android:id="@+id/et_time"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_time_setting"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.Allttaemerona.Underline"
-                android:ems="10"
-                android:inputType="numberDecimal"
+                android:layout_marginStart="10dp"
+                android:text="30"
+                app:layout_constraintEnd_toStartOf="@id/tv_min"
+                app:layout_constraintTop_toBottomOf="@id/tv_time"
+                app:layout_constraintStart_toStartOf="@id/tv_time"/>
+
+            <TextView
+                android:id="@+id/tv_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="분"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_time_setting"/>
+
+            <View
+                android:id="@+id/v_under_time"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_time"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_time_setting"/>
 
             <TextView
                 android:id="@+id/tv_pay"
@@ -93,19 +114,38 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:text="가격-배송료"
+                android:paddingBottom="10dp"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_time"/>
+                app:layout_constraintTop_toBottomOf="@id/v_under_time"/>
 
-            <EditText
-                android:id="@+id/et_pay"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_pay_setting"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:theme="@style/Theme.Allttaemerona.Underline"
-                android:inputType="numberDecimal"
+                android:layout_marginStart="10dp"
+                android:text="3000"
+                app:layout_constraintEnd_toStartOf="@id/tv_won"
+                app:layout_constraintTop_toBottomOf="@id/tv_pay"
+                app:layout_constraintStart_toStartOf="@id/tv_pay"/>
+
+            <TextView
+                android:id="@+id/tv_won"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_pay_setting"/>
+
+            <View
+                android:id="@+id/v_under_pay"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_pay"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_pay_setting"/>
 
             <TextView
                 android:id="@+id/tv_post_title"
@@ -115,7 +155,7 @@
                 android:text="물품"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_pay"/>
+                app:layout_constraintTop_toBottomOf="@id/v_under_pay"/>
 
             <EditText
                 android:id="@+id/et_post_title"
@@ -141,6 +181,7 @@
                 android:id="@+id/cg_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:singleSelection="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_category">
 
@@ -148,8 +189,57 @@
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    app:chipStrokeColor="@android:color/transparent"
+                    app:chipBackgroundColor="@color/chip_color"
                     android:text="카테고리"/>
 
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    app:chipStrokeColor="@android:color/transparent"
+                    app:chipBackgroundColor="@color/chip_color"
+                    android:text="카테고리"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    app:chipStrokeColor="@android:color/transparent"
+                    app:chipBackgroundColor="@color/chip_color"
+                    android:text="카테고리"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    app:chipStrokeColor="@android:color/transparent"
+                    app:chipBackgroundColor="@color/chip_color"
+                    android:text="카테고리"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    app:chipStrokeColor="@android:color/transparent"
+                    app:chipBackgroundColor="@color/chip_color"
+                    android:text="카테고리"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    app:chipStrokeColor="@android:color/transparent"
+                    app:chipBackgroundColor="@color/chip_color"
+                    android:text="카테고리"/>
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    app:chipStrokeColor="@android:color/transparent"
+                    app:chipBackgroundColor="@color/chip_color"
+                    android:text="카테고리"/>
 
 
             </com.google.android.material.chip.ChipGroup>
@@ -171,6 +261,7 @@
                 android:layout_height="23dp"
                 android:text="사진 등록"
                 android:layout_marginStart="10dp"
+                style="?android:attr/borderlessButtonStyle"
                 android:background="@drawable/purple_light_radius"
                 app:layout_constraintStart_toEndOf="@id/tv_description"
                 app:layout_constraintTop_toTopOf="@id/tv_description"/>
