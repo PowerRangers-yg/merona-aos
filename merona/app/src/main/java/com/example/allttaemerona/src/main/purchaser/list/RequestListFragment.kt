@@ -44,10 +44,6 @@ class RequestListFragment: BaseFragment<FragmentRequestListBinding>(FragmentRequ
                 showCustomToast(position.toString())
             }
 
-            override fun onMatchingClick(v: View, position: Int) {
-                showCustomToast("매칭")
-            }
-
             override fun onMenuClick(v: View, position: Int) {
                 showMenu(v, position)
             }

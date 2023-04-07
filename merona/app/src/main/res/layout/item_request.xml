@@ -100,12 +100,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <Button
-        android:id="@+id/btn_matching"
+    <TextView
+        android:id="@+id/tv_matching_status"
         android:layout_width="50dp"
         android:layout_height="23dp"
-        android:text="매칭"
-        style="?android:attr/borderlessButtonStyle"
+        android:text="매칭 중"
+        android:textAlignment="center"
+        android:paddingTop="2dp"
         android:background="@drawable/green_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
