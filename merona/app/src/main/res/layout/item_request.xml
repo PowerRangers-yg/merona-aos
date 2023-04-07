@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="12dp"
-    android:background="@color/gray">
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/gray_light_radius">
 
 
     <ImageView
@@ -14,21 +15,22 @@
         android:layout_height="wrap_content"
         app:layout_constraintWidth_percent="0.3"
         android:adjustViewBounds="true"
-        app:srcCompat="@drawable/gray_light_radius"
+        android:background="@drawable/gray_light_radius"
+        app:srcCompat="@drawable/no_image"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
         android:id="@+id/iv_location"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:srcCompat="@drawable/carbon_location"
         android:layout_marginStart="5dp"
         app:layout_constraintStart_toEndOf="@id/iv_item"
-        app:layout_constraintTop_toTopOf="@id/iv_item"
-        app:layout_constraintBottom_toTopOf="@id/iv_time"/>
+        app:layout_constraintTop_toTopOf="@id/iv_item"/>
 
     <TextView
+        android:id="@+id/tv_item_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="주소"
@@ -38,56 +40,59 @@
 
     <ImageView
         android:id="@+id/iv_time"
-        android:layout_width="23dp"
-        android:layout_height="23dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:srcCompat="@drawable/ic_baseline_access_time_24"
         app:layout_constraintStart_toStartOf="@id/iv_location"
         app:layout_constraintBottom_toTopOf="@id/iv_won"
         app:layout_constraintTop_toBottomOf="@id/iv_location"/>
 
     <TextView
+        android:id="@+id/tv_item_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="주소"
+        android:text="시간"
         app:layout_constraintStart_toEndOf="@id/iv_time"
         app:layout_constraintTop_toTopOf="@id/iv_time"
         app:layout_constraintBottom_toBottomOf="@id/iv_time"/>
 
     <ImageView
         android:id="@+id/iv_won"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:srcCompat="@drawable/icons8_won"
         app:layout_constraintStart_toStartOf="@id/iv_time"
         app:layout_constraintTop_toBottomOf="@id/iv_time"
         app:layout_constraintBottom_toTopOf="@id/iv_product"/>
 
     <TextView
+        android:id="@+id/tv_item_delivery_pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="주소"
+        android:text="배달비"
         app:layout_constraintStart_toEndOf="@+id/iv_won"
         app:layout_constraintTop_toTopOf="@+id/iv_won"
         app:layout_constraintBottom_toBottomOf="@+id/iv_won"/>
 
     <ImageView
         android:id="@+id/iv_product"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:srcCompat="@drawable/icon_product"
         app:layout_constraintStart_toStartOf="@id/iv_won"
-        app:layout_constraintTop_toBottomOf="@id/iv_won"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="@id/iv_item"/>
 
     <TextView
+        android:id="@+id/tv_item_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="주소"
+        android:text="물건"
         app:layout_constraintStart_toEndOf="@+id/iv_product"
         app:layout_constraintTop_toTopOf="@+id/iv_product"
         app:layout_constraintBottom_toBottomOf="@+id/iv_product"/>
 
     <ImageButton
+        android:id="@+id/ib_menu"
         android:layout_width="10dp"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_more_vert_24"
@@ -95,10 +100,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="18dp"
-        android:background="@color/black"
+    <Button
+        android:id="@+id/btn_matching"
+        android:layout_width="50dp"
+        android:layout_height="23dp"
+        android:text="매칭"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/green_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
