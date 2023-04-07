@@ -3,12 +3,10 @@ package com.example.allttaemerona.src.main.purchaser.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.example.allttaemerona.databinding.ItemRequestBinding
 import com.example.allttaemerona.src.main.purchaser.list.models.RequestItem
-import kotlinx.coroutines.NonDisposableHandle.parent
 
 class RequestItemRVAdapter(private val requestDataList: ArrayList<RequestItem>): RecyclerView.Adapter<RequestItemRVAdapter.RequestItemViewHolder>() {
     inner class RequestItemViewHolder(private val viewBinding: ItemRequestBinding): RecyclerView.ViewHolder(viewBinding.root) {
@@ -44,6 +42,11 @@ class RequestItemRVAdapter(private val requestDataList: ArrayList<RequestItem>):
         holder.btnMatching.setOnClickListener {
             itemClickListener.onMatchingClick(it, position)
         }
+    }
+
+    fun deleteItem(position: Int){
+        requestDataList.removeAt(position)
+        notifyItemRemoved(position)
     }
 
     override fun getItemCount(): Int = requestDataList.size
